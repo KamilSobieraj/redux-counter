@@ -7,6 +7,7 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import counterReducer from "./store/reducers/counter";
 import resultReducer from "./store/reducers/result";
+import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
   counter: counterReducer,
@@ -29,7 +30,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //Store
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(logger))
+  composeEnhancers(applyMiddleware(logger, thunk))
 );
 
 ReactDOM.render(
