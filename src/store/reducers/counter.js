@@ -11,6 +11,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         counter: state.counter + 1
       };
+    //above code means
+    // const newState = Object.assign({}, state); -> //Creating new empty object, and assign state to it
+    // newState.counter = state.counter + 1;
+    // return newState
     case actionTypes.DECREMENT:
       return {
         ...state,
